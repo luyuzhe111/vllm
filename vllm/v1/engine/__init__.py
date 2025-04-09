@@ -59,6 +59,7 @@ class EngineCoreRequest(
     eos_token_id: Optional[int]
     arrival_time: float
     lora_request: Optional[LoRARequest]
+    spec_token_acceptance_counts: Optional[list[int]]
 
 
 class EngineCoreEventType(enum.IntEnum):
@@ -101,6 +102,7 @@ class EngineCoreOutput(
     finish_reason: Optional[FinishReason] = None
     stop_reason: Union[int, str, None] = None
     events: Optional[list[EngineCoreEvent]] = None
+    spec_token_acceptance_counts: Optional[list[int]] = None
 
     @property
     def finished(self) -> bool:
